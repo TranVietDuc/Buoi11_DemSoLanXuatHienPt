@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var count =0;
+    var getPosition = [];
+    function displayArr(arr) {
+        for (let i = 0; i < (arr.length / 10); i++) {
+            for (let j = 0; j < 10; j++) {
+                if (i * 10 + j < 100) {
+                    document.write(arr[j + i * 10] + "  ");
+                }
+                else break;
+            }
+            document.write("<br/>");
+        }
+    }
+    function countXonArray(arr,x)
+    {
+        for(let i=0; i<arr.length; i++)
+        {
+            if(arr[i] === x)
+            {
+                getPosition[count] = i+1;
+              count ++;
+            }
+
+        }
+        return count;
+
+    }
+    var num=[];
+    for( var i= 0; i < 100; i++) {
+        num[i] = Math.floor(Math.random() * 101);
+    }
+    displayArr(num);
+    var getAValue = parseFloat(prompt("insert a value that you want to find: "));
+    document.write(getAValue +" was found " + countXonArray(num,getAValue)+ " time on positions: " + getPosition.toString());
+
+</script>
+</body>
+</html>
